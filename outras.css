@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    min-height: 400px;
+    background-image:url(/imgs/closeup-of-coins-stack-isolated-on-black-background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+  }
+
+ul{
+    list-style-type: none;
+}
+
+ul li::before {
+    content: "\2022"; 
+    color: rgb(155, 109, 25); 
+    display: inline-block; 
+    width: 1em; 
+    margin-left: -1em; 
+  }
+
+li{
+    margin: 50px 20px;
+}
+
+a{
+    color: white;
+    text-transform: uppercase;
+}
