@@ -1,2 +1,2 @@
 Projeto criado a partir de uma aula no intensivão da Alura onde, ao invés de criar o conversor de apenas uma moeda, utilizei uma pagina base pra direcionar o usuário para diversas moedas que podem ser convertidas.
-                            Os próximos passos desse projeto são: finalizar a refatoração do código da página base e das demais moedas que podem ser convertidas e também o consumo da Awesome API, fazendo com que a aplicação fique muito mais dinâmica e o código muito mais limpo e simples.
+                            Os próximos passos desse projeto são: o consumo da Awesome API, fazendo com que a aplicação fique muito mais dinâmica e o código muito mais limpo e simples.
