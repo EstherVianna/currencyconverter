@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="libra.css">
+    <link rel="stylesheet" href="/css/moedas.css">
     <title>Conversor de Real-Libra</title>
 </head>
 <body>
@@ -12,15 +12,15 @@
         <h1 class="page-title">
             Conversor de moedas
         </h1>
-        <a href="/moedas.html" class="outras">CONVERTA EM OUTRAS MOEDAS</a>
+        <a href="/moedas.html" class="others">CONVERTA EM OUTRAS MOEDAS</a>
     </header>
     <div class="container">
        
         <h3 class="page-subtitle">
-          Descubra os valores em libra esterlina £
+          Descubra os valores em LIBRA/BRL £
         </h3>
-        <label for="moeda">Insira o valor</label><br>
-        <input type="number" id="valor" size="2" /><br>
+        <label for="moeda"></label><br>
+        <input id="valor" max-size="10"  placeholder="Insira o valor em libra" autocomplete="off"/><br>
         <button type="submit" onclick="Converter()">Converter</button>
         <h2 id="valorConvertido"></h2>
       </div>

@@ -7,13 +7,23 @@ function Converter(){
     valor = parseFloat(valor)
     conversao = parseFloat(conversao)
 
-
-   const elementoPai = document.body 
-   const elementoFilho = document.createElement("p")
-   const  resposta = document.createTextNode(valor + " reais é igual a " + conversao + " pesos argentinos.")
-
-   elementoFilho.appendChild(resposta)
-   elementoPai.appendChild(elementoFilho);
-
-   return resposta
+    if(valor> 0 ){
+        const elementoPai = document.querySelector(".container");
+        let elementoFilho = document.createElement("input");
+        const  resposta = `${valor} euros é igual a ${conversao} reais`;
+        elementoFilho.id = "valor";
+        elementoFilho.setAttribute("disabled", null);
+        elementoPai.appendChild(elementoFilho);
+        elementoFilho.value = resposta;
+     
+        resposta;
+        
+    setTimeout(()=>{
+         let counter = 0;
+         window.location.reload()
+         window.open(`A tela irá reiniciar em ${ counter++ }`)}, 20000); 
+    }
+     else{
+         alert(`Insira um valor válido`)
+     }
 }
