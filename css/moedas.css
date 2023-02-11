@@ -66,11 +66,12 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
-    margin-top: 12px;
+    margin-top: 15px;
     cursor: pointer;
     font-family: sans-serif;
     font-weight: 600;
   }
+
   button::before {
     content: '';
     width: 0;
@@ -83,12 +84,22 @@ body {
     transition: .5s ease;
     display: block;
     z-index: -1;
-   }
+  }
    
-   button:hover::before {
+  button:hover::before {
     width: 9em;
-   }
+  }
 
-  input{
+  #resultado{
     color: black;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #date{
+    margin-top: 60px;
+    color: white;
+    font-size: .8em;
   }
