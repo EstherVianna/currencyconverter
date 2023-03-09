@@ -3,31 +3,36 @@
     text-decoration: none;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Nobile:ital@1&display=swap');
+
 body {
-    font-family: "Roboto Mono", monospace;
+    font-family: 'Nobile', sans-serif;
     min-height: 400px;
-    background-image:url(/imgs/closeup-of-coins-stack-isolated-on-black-background.jpg);
-    background-repeat: no-repeat;
     background-size: 100vw 100vh;
+    background-image: url(/imgs/layered-waves-haikei.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
-ul{
-    list-style-type: none;
+  form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;   
+    font-size: 5em;
+    font-style: italic;
+    font-weight: 400;
+    color: #90EBA9;
 }
 
-ul li::before {
-    content: "\2022"; 
-    color: rgb(155, 109, 25); 
-    display: inline-block; 
-    width: 1em; 
-    margin-left: -1em; 
-  }
-
-li{
-    margin: 50px 20px;
+select{
+    padding: 10px;
+    background-color: transparent;
+    color: #90EBA9;
 }
 
-a{
-    color: white;
-    text-transform: uppercase;
+option{
+    background-color: #001220;
 }

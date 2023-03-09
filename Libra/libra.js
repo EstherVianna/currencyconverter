@@ -1,29 +1,63 @@
-function Converter(){
-    const valorElemento = document.querySelector("#valor")
-    let valor = valorElemento.value
+function Convert() {
+    const coins = [
+      "EUR-BRL",
+      "USD-BRL",
+      "BTC-BRL",
+      "ARS-BRL",
+      "GBP-BRL"
+    ];
+    const url = "https://economia.awesomeapi.com.br/json/last/";
+    const formatCurrency = (value) => {
+        return value.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+      }
+  
+    fetch(url + coins)
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error("Erro ao obter dados da API: " + response.statusText);
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        const value = parseFloat(document.querySelector("#valor").value);
 
-    let conversao = (valor * 5.98).toFixed(2)
-
-    valor = parseFloat(valor)
-    conversao = parseFloat(conversao)
-
-    if(valor> 0 ){
+        if(value > 0 ){
+        let libraReal = data.GBPBRL;
+        const currency = libraReal.ask;
         const elementoPai = document.querySelector(".container");
-        let elementoFilho = document.createElement("input");
-        const  resposta = `${valor} euros é igual a ${conversao} reais`;
-        elementoFilho.id = "valor";
+        const elementoFilho = document.createElement("input");
+        const resposta = `${value} libras é igual a ${formatCurrency(value * currency)} reais`;
+
+        elementoFilho.id = "resultado";
+  
         elementoFilho.setAttribute("disabled", null);
+  
         elementoPai.appendChild(elementoFilho);
+  
         elementoFilho.value = resposta;
-     
-        resposta;
         
-    setTimeout(()=>{
-         let counter = 0;
-         window.location.reload()
-         window.open(`A tela irá reiniciar em ${ counter++ }`)}, 20000); 
-    }
-     else{
-         alert(`Insira um valor válido`)
-     }
+        const paragraph = document.createElement("p");
+        paragraph.id = "date"
+        const date =  new Date (libraReal.create_date);
+
+        const LastUpdate = paragraph.innerHTML =
+                         `Última atualização ${date.toLocaleString()}`;
+
+        elementoPai.appendChild(paragraph);
+
+        return resposta, LastUpdate;
+      
+      }
+      else{
+        alert(`Insira um valor válido`)}
+    })
+      .catch(function(error) {
+        console.error(error.message);
+      });
+
+      setTimeout(() => {
+        document.querySelector("#resultado").remove();
+        document.querySelector("#date").remove();
+        document.querySelector("#valor").value = "";
+      }, 30000);
 }
